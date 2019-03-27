@@ -42,12 +42,12 @@ public class MainActivity extends AppCompatActivity {
                 PlanetAdapter planetAdapter = new PlanetAdapter(planetList);
                 recyclerView.setAdapter(planetAdapter);
                 recyclerView.setLayoutManager(linearLayoutManager);
-                Log.d(TAG, "This retrofit call works Lola " + response.body());
+                Log.d("tag", response.body().getPlanets().get(1).getName());
             }
 
             @Override
             public void onFailure(Call<PlanetList> call, Throwable t) {
-
+                Log.d("tag", "onFailure"  + t.toString());
             }
         });
     }
